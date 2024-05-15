@@ -1,4 +1,4 @@
-FROM brettt89/silverstripe-web:php8.1-apache
+FROM brettt89/silverstripe-web:8.1
 
 # Set the working directory
 WORKDIR /var/www/html

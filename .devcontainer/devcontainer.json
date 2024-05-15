@@ -1,0 +1,16 @@
+{
+  "name": "SilverStripe Development Container",
+  "dockerComposeFile": "../compose-dev.yaml",
+  "service": "web",
+  "workspaceFolder": "/var/www/html",
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-azuretools.vscode-docker"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "composer install --prefer-dist --no-scripts --no-dev --optimize-autoloader",
+  "remoteUser": "www-data"
+}

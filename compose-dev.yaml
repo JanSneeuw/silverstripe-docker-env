@@ -4,23 +4,12 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: DevEnv.Dockerfile
     container_name: silverstripe-web
     volumes:
       - ./:/var/www/html
-      - "/var/run/docker.sock:/var/run/docker.sock"
     ports:
       - "8080:80"
-    environment:
-      DB_CLASS: MySQLDatabase
-      DB_SERVER: db
-      DB_NAME: silverstripe
-      DB_USERNAME: silverstripe
-      DB_PASSWORD: password
-      SS_ENVIRONMENT_TYPE: dev
-      SS_SEND_ALL_EMAILS_FROM: no-reply@example.com
-      SS_SMTP_SERVER: mailpit
-      SS_SMTP_PORT: 1025
     depends_on:
       - db
       - mailpit
